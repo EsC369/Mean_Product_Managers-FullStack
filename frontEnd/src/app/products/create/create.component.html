@@ -1,0 +1,12 @@
+<!-- ADD TASKS -->
+<div class="border" style="text-align:center;">
+  <form (submit)="createProduct()">
+    <h3>Add Product</h3>
+    <p>Enter Title: <input type="text" name="newProduct.title" [(ngModel)]="newProduct.title" placeholder="Eample Title" /></p>
+    <p>Enter Price: <input type="text" name="newProduct.price" [(ngModel)]="newProduct.price" placeholder="2.99"/></p>
+    <p>Enter Img URL: <input type="text" name="newProduct.imgUrl" [(ngModel)]="newProduct.imgUrl" placeholder="google.com/apple/etc"/></p>
+    <input type='submit' class="btn btn-md btn-info"value='Add Product'> | <a href='/' class="btn btn-md btn-info">Cancel</a>
+  </form>
+  <br>
+</div>
+<hr>

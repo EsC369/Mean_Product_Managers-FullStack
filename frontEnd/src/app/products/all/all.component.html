@@ -1,0 +1,13 @@
+<div class="container">
+  <div *ngIf="products">
+    <div *ngFor="let product of products" style="border: solid #ff5100;" class="center">
+      <ul style="list-style-type: none;">
+        <p> product ID: {{ product._id }} </p>
+        <p> product Title: {{ product.title }} </p>
+        <p> product Description: {{ product.price }} </p>
+        <p> Created at: {{ product.created_at }} </p>
+        <p><a [routerLink]="['../showedit/']" class="btn btn-info btn-md">Edit </a> | <button class="btn btn-danger" (click)="deleteProduct(product._id)">Delete</button></p>
+      </ul>
+    </div>
+  </div>
+</div>

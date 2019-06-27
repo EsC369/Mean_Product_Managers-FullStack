@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Project</title>
+</head>
+
+<body>
+  <div class="wrappper">
+    <div class="container">
+      <div style="text-align:center">
+        <h1>
+          Welcome to {{ title }}!
+        </h1>
+      </div>
+      <!-- <h3>Test: <a [routerLink]="['/products/showedit/:id']">Edit Product</a></h3> -->
+      <h3 style="text-align:center"><a [routerLink]="['/products/home']">Home </a> | <a [routerLink]="['/products/all']">List Products</a> | <a [routerLink]="['/products/create']">Add Product</a></h3>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</body>
+
+</html>

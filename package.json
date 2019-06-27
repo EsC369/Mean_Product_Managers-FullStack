@@ -1,0 +1,22 @@
+{
+  "name": "mean_product_manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "Ryan Smith EsCL337",
+  "license": "MIT",
+  "devDependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.1"
+  },
+  "dependencies": {
+    "config": "^3.1.0",
+    "mongoose": "^5.6.1"
+  }
+}
