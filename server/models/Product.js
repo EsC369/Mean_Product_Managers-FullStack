@@ -27,7 +27,18 @@ const ProductSchema =  mongoose.Schema({
   created_at: {
     type: Date,
     default: Date.now
-  }
+  },
+
+  comments: [
+    {
+      name: String,
+      comment_content: String,
+      timestamp: {
+        type: Date,
+        default: Date.now
+      }
+    }
+  ]
   
 });
 

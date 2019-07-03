@@ -18,7 +18,6 @@ export class ShoweditComponent implements OnInit {
 
   getOneProduct(id: string) {
     this._httpService.getOneProduct(id).subscribe(data => {
-      console.log("TEST HERE", data)
       if(data["message"] == "Success") {
         this.product = data["data"];
         console.log("TEST HERE", this.product);

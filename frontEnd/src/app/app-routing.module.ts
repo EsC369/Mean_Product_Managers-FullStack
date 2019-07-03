@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ProductsComponent } from './products/products.component';
 import { CreateComponent } from './products/create/create.component';
-import { ShoweditComponent } from './products/showedit/showedit.component';
+import { EditComponent } from './products/edit/edit.component';
 import { AllComponent } from './products/all/all.component';
 import { HomeComponent } from './products/home/home.component';
 
@@ -12,10 +12,7 @@ const routes: Routes = [
     {path: "home", component: HomeComponent},
     {path: "all", component: AllComponent},
     {path: "create", component: CreateComponent},
-    {path: "showedit/:id", component: ShoweditComponent}
-    // {path: "delete/:id", component: DeleteComponent},
-    // {path: "show/:id", component: ShowComponent},
-    // {path: "edit/:id", component: EditComponent}
+    {path: "edit/:id", component: EditComponent}
   ]},
   {path: "", pathMatch: "full", redirectTo: "/products/home"}
 ];

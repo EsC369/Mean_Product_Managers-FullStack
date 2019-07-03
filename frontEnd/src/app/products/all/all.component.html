@@ -6,7 +6,28 @@
         <p> product Title: {{ product.title }} </p>
         <p> product Description: {{ product.price }} </p>
         <p> Created at: {{ product.created_at }} </p>
-        <p><a [routerLink]="['../showedit/']" class="btn btn-info btn-md">Edit </a> | <button class="btn btn-danger" (click)="deleteProduct(product._id)">Delete</button></p>
+
+        <!-- COMMENT DROP DOWN BUTTON -->
+        <p><a [routerLink]="['../edit/', product._id]" class="btn btn-info btn-md">Edit </a> | <button class="btn btn-danger" (click)="deleteProduct(product._id)">Delete</button></p>
+        <p>
+          <button class="btn btn-primary btn-md" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            Comments
+          </button>
+        </p>
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body">
+            Create Comment: 
+
+            <div *ngFor="let comment of product.comments" style="border: solid #ff5100;" class="center">
+            <p>Created By: {{ comment.name }}</p>
+            <p>Comment Content: {{ comment.comment_content }}</p>
+          </div>
+
+
+
+          </div>
+        </div>
+        <!-- END -->
       </ul>
     </div>
   </div>

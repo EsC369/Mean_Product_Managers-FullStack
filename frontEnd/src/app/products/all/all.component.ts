@@ -35,5 +35,17 @@ export class AllComponent implements OnInit {
     }
   }
 
+  createComment() {
+    console.log("INSIDE THE Create COMMENT!")
+    
+      // this._httpService.deleteProduct(id).subscribe(data => {
+      //   if(data["message"] == "Success") {
+      //     this.getAllProducts();
+      //   }
+      // });
+    
+  }
+  // Create comment:
+
   
 }

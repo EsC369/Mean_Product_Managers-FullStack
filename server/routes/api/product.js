@@ -87,4 +87,29 @@ router.delete("/:id/delete", (req, res) => {
   });
 });
 
+// Add Comment Route:
+router.post("/:id/comment", (req, res) => {
+  Product.findById(req.params.id, (err, product) => {
+    if (err) {
+      res.json({ message: "Error", error: err });
+    }
+    else {
+      const newComment = {
+        name: req.body.name,
+        comment_content: req.body.comment_content
+      }
+      console.log("Created New Comment Of: ", newComment)
+      product.comments.unshift(newComment);
+      product.save((err) => {
+        if (err) {
+          res.json({ message: "Error", error: err });
+        }
+        else {
+          res.json({ message: "Success", data: product });
+        }
+      });
+    }
+  });
+});
+
 module.exports = router;

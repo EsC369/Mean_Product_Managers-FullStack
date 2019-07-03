@@ -1,10 +1,10 @@
 <router-outlet></router-outlet>
 
-<form *ngIf="updateProduct['_id']" (submit)="updatedProduct(['_id'])">
+<form  (submit)="updateProduct(['product_id'])">
   <hr>
   <h3>Update Product</h3>
-  <p>Title: <input type="text" value="{{updatedProduct.title}}" name="updatedProduct.title" [(ngModel)]="updatedProduct.title" /></p>
-  <p>Price: <input type="text" value="{{updatedProduct.price}}" name="updatedProduct.price" [(ngModel)]="updatedProduct.price" /></p>
+  <p>Title: <input type="text" value="{{updatedProduct.title}}" name="title" [(ngModel)]="updatedProduct.title" /></p>
+  <p>Price: <input type="text" value="{{updatedProduct.price}}" name="price" [(ngModel)]="updatedProduct.price" /></p>
   <!-- <p>Img URL: <input type="text" value="{{updatedProduct.imgUrl}}" name="updatedProduct.imgUrl" [(ngModel)]="updatedProduct.imgUrl" /></p> -->
   <p><input class="btn btn-primary marg" type="submit" value="Update Product" /> <button class="btn btn-secondary" (click)="cancelEdit()">Cancel</button></p>
   <hr>
