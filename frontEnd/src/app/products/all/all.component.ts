@@ -8,6 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AllComponent implements OnInit {
   @Input() products = [];
+  newComment = { name: "", comment_content: ""};
   
   constructor(private _route: ActivatedRoute,private _router: Router,private _httpService: HttpService) { }
 
@@ -45,7 +46,4 @@ export class AllComponent implements OnInit {
       // });
     
   }
-  // Create comment:
-
-  
 }

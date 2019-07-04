@@ -1,6 +1,6 @@
 <div class="container">
   <div *ngIf="products">
-    <div *ngFor="let product of products" style="border: solid #ff5100;" class="center">
+    <div *ngFor="let product of products; index as i" style="border: solid #ff5100;" class="center">
       <ul style="list-style-type: none;">
         <p> product ID: {{ product._id }} </p>
         <p> product Title: {{ product.title }} </p>
@@ -9,21 +9,30 @@
 
         <!-- COMMENT DROP DOWN BUTTON -->
         <p><a [routerLink]="['../edit/', product._id]" class="btn btn-info btn-md">Edit </a> | <button class="btn btn-danger" (click)="deleteProduct(product._id)">Delete</button></p>
+
         <p>
-          <button class="btn btn-primary btn-md" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          <button class="btn btn-primary btn-md" type="button" data-toggle="collapse" [attr.data-target]="'#collapseExample-'+i" aria-expanded="false" aria-controls="collapseExample">
             Comments
           </button>
-        </p>
-        <div class="collapse" id="collapseExample">
+        </p> 
+        <div class="collapse" id="collapseExample-{{i}}">
           <div class="card card-body">
             Create Comment: 
-
+            
+            <div class="border" style="text-align:center;">
+                  <form (submit)="createComment()">
+                    <h3>Add Comment</h3>
+                    <p>Enter Your Name: <input type="text" [(ngModel)]="newComment.name" name="name" placeholder="John Doe" /></p>
+                    <p>Enter Content: <input type="text" [(ngModel)]="newComment.comment_content" name="comment_content" placeholder="Enter your comment"/></p>
+                    <input type='submit' class="btn btn-md btn-info"value='Create Comment'> | <a href='/products/all' class="btn btn-md btn-info">Cancel</a>
+                  </form>
+                  <br>
+                </div>
+                {{ newComment | json}}
             <div *ngFor="let comment of product.comments" style="border: solid #ff5100;" class="center">
-            <p>Created By: {{ comment.name }}</p>
-            <p>Comment Content: {{ comment.comment_content }}</p>
+              <p>Created By: {{ comment.name }}</p>
+              <p>Comment Content: {{ comment.comment_content }}</p>
           </div>
-
-
 
           </div>
         </div>
