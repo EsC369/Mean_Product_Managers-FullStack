@@ -8,9 +8,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AllComponent implements OnInit {
   @Input() products = [];
-  newComment = { name: "", comment_content: ""};
-  
-  constructor(private _route: ActivatedRoute,private _router: Router,private _httpService: HttpService) { }
+  newComment = { name: "", comment_content: "", id: ""};
+  product_id: any;
+  constructor(private _httpService: HttpService, private _route: ActivatedRoute, private _router: Router) { }
 
   ngOnInit() {
     this.getAllProducts()
@@ -35,15 +35,21 @@ export class AllComponent implements OnInit {
       });
     }
   }
+  
+  // createComment(newComment) {
+  //   console.log("Created New product", this.newComment);
+  //   console.log(this.newComment.id);
+  //   console.log("****************");
+  //   const obs = this._httpService.createComment(this.newComment);
+  //   obs.subscribe(data => {
+  //     console.log(data);
+  //     console.log("Created Comment");
+  //     console.log("TEST here", data);
+  //     this.newComment = { name: "", comment_content: "", id: "" }
+  //     this._router.navigate(["/products/all"]);
+  //   })
+  // };
 
-  createComment() {
-    console.log("INSIDE THE Create COMMENT!")
-    
-      // this._httpService.deleteProduct(id).subscribe(data => {
-      //   if(data["message"] == "Success") {
-      //     this.getAllProducts();
-      //   }
-      // });
-    
-  }
+  
+
 }

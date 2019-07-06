@@ -12,6 +12,7 @@ import { EditComponent } from './products/edit/edit.component';
 import { AllComponent } from './products/all/all.component';
 import { HomeComponent } from './products/home/home.component';
 import { ShoweditComponent } from './products/showedit/showedit.component';
+import { CommentComponent } from './products/comment/comment.component';
 
 
 
@@ -25,6 +26,7 @@ import { ShoweditComponent } from './products/showedit/showedit.component';
     AllComponent,
     HomeComponent,
     ShoweditComponent,
+    CommentComponent,
     
   ],
   imports: [

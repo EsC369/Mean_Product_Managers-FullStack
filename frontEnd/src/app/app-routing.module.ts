@@ -6,13 +6,15 @@ import { CreateComponent } from './products/create/create.component';
 import { EditComponent } from './products/edit/edit.component';
 import { AllComponent } from './products/all/all.component';
 import { HomeComponent } from './products/home/home.component';
+import { CommentComponent } from './products/comment/comment.component';
 
 const routes: Routes = [
   {path: "products", component: ProductsComponent, children: [
     {path: "home", component: HomeComponent},
     {path: "all", component: AllComponent},
     {path: "create", component: CreateComponent},
-    {path: "edit/:id", component: EditComponent}
+    {path: "edit/:id", component: EditComponent},
+    {path: ":id/comment", component: CommentComponent}
   ]},
   {path: "", pathMatch: "full", redirectTo: "/products/home"}
 ];

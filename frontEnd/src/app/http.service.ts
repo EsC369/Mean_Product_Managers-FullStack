@@ -28,5 +28,12 @@ export class HttpService {
   deleteProduct(id: string) {
     return this._http.delete(`/api/products/${id}/delete`, {});
   }
+
+  createComment(id: string, newComment) {
+    console.log("createComment - service");
+    console.log(newComment.id);
+    console.log(newComment);
+    return this._http.post(`/api/products/${newComment.id}/comment`, newComment);
+  }
   
 }

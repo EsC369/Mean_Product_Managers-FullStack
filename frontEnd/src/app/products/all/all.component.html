@@ -11,19 +11,21 @@
         <p><a [routerLink]="['../edit/', product._id]" class="btn btn-info btn-md">Edit </a> | <button class="btn btn-danger" (click)="deleteProduct(product._id)">Delete</button></p>
 
         <p>
+            
           <button class="btn btn-primary btn-md" type="button" data-toggle="collapse" [attr.data-target]="'#collapseExample-'+i" aria-expanded="false" aria-controls="collapseExample">
             Comments
           </button>
         </p> 
         <div class="collapse" id="collapseExample-{{i}}">
           <div class="card card-body">
-            Create Comment: 
             
             <div class="border" style="text-align:center;">
-                  <form (submit)="createComment()">
+                  <form (submit)="createComment(id)">
                     <h3>Add Comment</h3>
+                    <!-- <input type="text" name="id" [(ngModel)]="newComment.id" value="{{ product._id }}" /> -->
                     <p>Enter Your Name: <input type="text" [(ngModel)]="newComment.name" name="name" placeholder="John Doe" /></p>
                     <p>Enter Content: <input type="text" [(ngModel)]="newComment.comment_content" name="comment_content" placeholder="Enter your comment"/></p>
+                    <a [routerLink]="['../'+product._id+'/comment']" class="btn btn-info btn-md">TEST HERE </a>
                     <input type='submit' class="btn btn-md btn-info"value='Create Comment'> | <a href='/products/all' class="btn btn-md btn-info">Cancel</a>
                   </form>
                   <br>
